@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO - María Alonso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Amatic+SC:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff9800;
+            --secondary-color: #4b2e2b;
+            --accent-color: #e57c84;
+            --light-color: #f7f6f2;
+            --text-color: #6d4b43;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #fff;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            margin-top: 40vh;
+        }
+        
+        /* HEADER Y NAVEGACIÓN */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-top: -25vh;
+        }
+        
+        .logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 26px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--secondary-color);
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 100px 0 50px;
+            position: relative;
+        }
+        
+        .hero-icon {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        h1 .accent {
+            font-family: 'Pacifico', cursive;
+            color: var(--primary-color);
+        }
+        
+        h1 .highlight {
+            color: var(--primary-color);
+            letter-spacing: 2px;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 10px;
+        }
+        
+        /* ABOUT SECTION */
+        .about {
+            padding: 100px 0;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: -25vh;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .illustration {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .about-text h2 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 4rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .about-text h2 span {
+            font-family: 'Pacifico', cursive;
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-text a {
+            color: var(--accent-color);
+            text-decoration: none;
+            border-bottom: 2px dotted var(--accent-color);
+            transition: all 0.3s;
+        }
+        
+        .about-text a:hover {
+            color: #b65a5e;
+            border-color: #b65a5e;
+        }
+        
+        /* PROJECTS SECTION */
+        .projects {
+            padding: 100px 0;
+            background-color: #ffffff;
+            margin-top: 10vh;
+        }
+        
+        .section-title {
+            font-family: 'Amatic SC', cursive;
+            font-size: 4rem;
+            text-align: center;
+            color: var(--secondary-color);
+            margin-top: -40vh;
+        }
+
+            .section-titleempresa {
+            font-family: 'Amatic SC', cursive;
+            font-size: 4rem;
+            text-align: center;
+            color: var(--secondary-color);
+            margin-top: 30vh;
+        }
+        
+        /* CAROUSEL */
+        .carousel {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 80px;
+            position: relative;
+        }
+        
+        .carousel-inner {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .carousel-slide {
+            display: none;
+            width: 100%;
+        }
+        
+        .carousel-slide.active {
+            display: block;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border: 3px solid #FFD700;
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+
+        
+        .carousel-dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        
+        .carousel-dot.active, .carousel-dot:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .carousel-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        .carousel-prev {
+            left: 10px;
+        }
+        
+        .carousel-next {
+            right: 10px;
+        }
+
+
+         /* VIDEOS SECTION */
+        .videos-section {
+            
+            text-align: center;
+        }
+
+        .videosempresas{
+            text-align: center;
+
+        }
+
+        .videosempresa-grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .videos-title {
+            font-family: 'Amatic SC', cursive;
+            font-size: 3.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+            margin-top: 10vh;
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .video-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .video-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .video-item video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        
+        /* GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* FOOTER */
+        footer {
+            background: #ffffff;
+            padding: 80px 0 30px;
+            text-align: center;
+        }
+        
+        .footer-icons {
+            margin-bottom: 30px;
+        }
+        
+        .footer-icons a {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        
+        .footer-icons img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .footer-icons img:hover {
+            transform: scale(1.2);
+        }
+        
+        .footer-title {
+            font-family: 'Amatic SC', cursive;
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+        
+        .footer-form {
+            flex: 2;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        
+        
+        .footer-form input,
+        .footer-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            font-size: 16px;
+            background: #fff;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        
+        .footer-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .footer-btn {
+            width: 60%;
+            margin: 10px auto 0;
+            padding: 15px;
+            background: var(--primary-color);
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .footer-btn:hover {
+            background: #e68900;
+        }
+
+         .footer-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .footer-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            
+            margin-bottom: 20px;
+        }
+        
+        .footer-image-caption {
+            font-family: 'Amatic SC', cursive;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+        
+        .footer-copy {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #8d8d8d;
+        }
+
+
+        
+        /* BORDES DECORATIVOS */
+        .border-decor {
+            position: fixed;
+            z-index: 99999999;
+            background: url('imagenes/estrellas amarillas.jpg');
+            background-size: cover;
+        }
+        
+        .border-top {
+            top: 0;
+            left: 0;
+            width: 250vh;
+            height: 100px;
+        }
+        
+        .border-bottom {
+            bottom: 0;
+            left: 0;
+            width: 250vh;
+            height: 100px;
+        }
+        
+        .border-left {
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 130vh;
+            transform: rotateX(180deg);
+            /* Se pueden necesitar ajustes */
+            display: block;
+            
+        }
+        
+        .border-right {
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 130vh;
+        }
+        
+        /* RESPONSIVE */
+         @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.3s;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .hero {
+                padding: 150px 0 50px;
+            }
+            
+            .about {
+                padding: 60px 0;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .about-text {
+                text-align: center;
+            }
+            
+            .projects {
+                padding: 60px 0;
+            }
+            
+            .carousel-slide img {
+                height: 300px;
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .footer-form-container {
+                flex-direction: column;
+            }
+            
+            .footer-image, .footer-form {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-text h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-btn {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Bordes decorativos -->
+    <div class="border-decor border-top"></div>
+    <div class="border-decor border-bottom"></div>
+    <div class="border-decor border-left"></div>
+    <div class="border-decor border-right"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo">MARIA ALONSO</div>
+            <button class="menu-toggle">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </header>
+
+        <section id="home" class="hero">
+            <img src="imagenes/luna.png" alt="Luna" class="hero-icon">
+            <h1><span class="accent">PORTFOLIO</span></h1>
+            <p>Conoce un poco más sobre mí y mis proyectos</p>
+        </section>
+    </div>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="imagenes/foto principal.png" alt="María Alonso" class="illustration">
+                </div>
+
+                <div class="about-text">
+                    <h2>Hola! <span>Me llamo María</span></h2>
+                    <p>¡Hola! Soy una estudiante del IES.TIERNO GALVÁN de diseño con muchas ganas de crear cosas bonitas y significativas.</p>
+                    <p>Aún estoy en proceso de aprender, pero cada proyecto me ayuda a crecer y mejorar. Espero que os gusten mis trabajos :)</p>
+                    <a href="#projects">Ver mis proyectos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Algunos de mis proyectos</h2>
+            
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-slide active">
+                        <img src="F:\SEGUNDO FP\DENT\PORTFOLIO\imagenes/Alonso_Gamero_Maria_Paisaje.jpg" alt="Paisaje">
+                        <div class="carousel-caption">Paisaje</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="F:\SEGUNDO FP\DENT\PORTFOLIO\imagenes/PINTURA PESCADO.png" alt="Pintura de pez">
+                        <div class="carousel-caption">Pintura de pez</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="F:\SEGUNDO FP\DENT\PORTFOLIO\imagenes/Alonso_Gamero_Maria_BEBE GOKU FOTO.png" alt="Bebé Goku">
+                        <div class="carousel-caption">Bebé Goku</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="F:\SEGUNDO FP\DENT\PORTFOLIO\imagenes/Alonso_Gamero_Maria_Foto Lowpoly.png" alt="Foto Lowpoly">
+                        <div class="carousel-caption">Foto Lowpoly</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="F:\SEGUNDO FP\DENT\PORTFOLIO\imagenes/CUARTO ISOMÉTRICO.png" alt="Cuarto isométrico">
+                        <div class="carousel-caption">Cuarto isométrico</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="F:\SEGUNDO FP\DENT\PORTFOLIO\imagenes/HABITACIÓN CÓNICA FRONTAL (MEJORADA).png" alt="Habitación cónica">
+                        <div class="carousel-caption">Habitación cónica</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="F:\SEGUNDO FP\DENT\PORTFOLIO\imagenes/casa entera 2.PNG" alt="Casa completa">
+                        <div class="carousel-caption">Casa completa</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="F:\SEGUNDO FP\DENT\PORTFOLIO\imagenes/Colores personaje(DEF).png" alt="Personaje con colores">
+                        <div class="carousel-caption">Personaje con colores</div>
+                    </div>
+                    
+                    <button class="carousel-nav carousel-prev">❮</button>
+                    <button class="carousel-nav carousel-next">❯</button>
+                </div>
+                
+                <div class="carousel-controls">
+                    <span class="carousel-dot active" data-slide="0"></span>
+                    <span class="carousel-dot" data-slide="1"></span>
+                    <span class="carousel-dot" data-slide="2"></span>
+                    <span class="carousel-dot" data-slide="3"></span>
+                    <span class="carousel-dot" data-slide="4"></span>
+                    <span class="carousel-dot" data-slide="5"></span>
+                    <span class="carousel-dot" data-slide="6"></span>
+                    <span class="carousel-dot" data-slide="7"></span>
+                </div>
+            </div>
+
+            <!-- SECCIÓN DE VIDEOS -->
+            <section id="videos" class="videos-section">
+                <h2 class="videos-title">Mis Videos</h2>
+                <div class="videos-grid">
+                    <!-- Fila 1 -->
+                    <div class="video-item">
+                       <iframe 
+    src="https://youtu.be/FeUyv5Hhz4c"
+    allowfullscreen>
+  </iframe>
+                        
+                    </div>
+                    <div class="video-item">
+                        <iframe 
+    src="https://youtu.be/QcVvePFgN9o"
+    allowfullscreen>
+  </iframe>
+                        
+                    </div>
+                    <div class="video-item">
+                        <iframe 
+    src="https://youtu.be/E1TKa00FUMo"
+    allowfullscreen>
+  </iframe>
+                        
+                    </div>
+                    
+                    <!-- Fila 2 -->
+                    <div class="video-item">
+                        <iframe 
+    src="https://youtu.be/J6JIocpkJT0"
+    allowfullscreen>
+  </iframe>
+                       
+                    </div>
+                    <div class="video-item">
+                        <iframe 
+    src="https://youtu.be/4ecdObJJd-8"
+    allowfullscreen>
+  </iframe>
+                        
+                    </div>
+                    <div class="video-item">
+                        <iframe 
+    src="https://youtu.be/j3R9AGoNxoU"
+    allowfullscreen>
+  </iframe>
+                       
+                    </div>
+
+                    <div class="video-item">
+                       <iframe 
+    src="https://youtu.be/P_kI44YpHU4"
+    allowfullscreen>
+  </iframe>
+                       
+                    </div>
+
+                    <div class="video-item">
+                        <iframe 
+    src="https://youtu.be/7Z2A5P2dkWA"
+    allowfullscreen>
+  </iframe>
+                       
+                    </div>
+                </div>
+            
+            <h2 class="section-titleempresa">Proyectos de Empresa</h2>
+            
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="F:\SEGUNDO FP\DENT\PORTFOLIO\imagenes/portada3.0(fondo amarillo).png" alt="Proyecto empresarial 1">
+                    <div class="gallery-caption">ENTHARIEL GAMES</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="F:\SEGUNDO FP\DENT\PORTFOLIO\imagenes/portada3.0(fondo azul).png" alt="Proyecto empresarial 2">
+                    <div class="gallery-caption">ENTHARIEL GAMES</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="F:\SEGUNDO FP\DENT\PORTFOLIO\imagenes/portada3.0(fondo azul).png" alt="Proyecto empresarial 3">
+                    <div class="gallery-caption">ENTHARIEL GAMES</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="F:\SEGUNDO FP\DENT\PORTFOLIO\imagenes/huron detective.png" alt="Proyecto empresarial 4">
+                    
+                    <div class="gallery-caption">ENTHARIEL GAMES</div>
+                </div>
+
+            </div>
+        </div>
+
+        <section id="videos" class="videosempresas">
+                <h2 class="videos-title">Algunos de los videos para las empresas</h2>
+                <div class="videosempresa-grid">
+                    <!-- Fila 1 -->
+                    <div class="video-item">
+                        <iframe 
+    src="https://youtu.be/FPSxP5yfEgI"
+    allowfullscreen>
+  </iframe>
+                        
+                    </div>
+                    <div class="video-item">
+                        <iframe 
+    src="https://youtu.be/o1HYf-wFgQA"
+    allowfullscreen>
+  </iframe>
+                        
+                    </div>
+                    <div class="video-item">
+                        <iframe 
+    src="https://youtu.be/w25Jd3I0Jzg"
+    allowfullscreen>
+  </iframe>
+                        
+                    </div>
+                    
+                    <!-- Fila 2 -->
+                    <div class="video-item">
+                        <iframe 
+    src="https://youtu.be/1xNRkLkvhw0"
+    allowfullscreen>
+  </iframe>
+                       
+                    </div>
+                    <div class="video-item">
+                        <iframe 
+    src="https://youtu.be/1DNnavQAYjc"
+    allowfullscreen>
+  </iframe>>
+                        
+                    </div>
+
+                </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-icons">
+                <a href="https://x.com/mrg14_drawart"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" alt="Twitter"></a>
+                <a href="https://www.instagram.com/maria_ag_14/"><img src="https://img.freepik.com/vector-premium/icono-logotipo-vector-instagram-logotipo-redes-sociales_901408-392.jpg?semt=ais_hybrid&w=740&q=80" alt="Instagram"></a>
+                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8aMugg7LWDXqkWc-9JlApM4MLPXhi-EPDYA&s" alt="Discord"></a>
+                <a href="https://www.youtube.com/@mrg_drawart"><img src="https://w7.pngwing.com/pngs/936/468/png-transparent-youtube-logo-youtube-logo-computer-icons-subscribe-angle-rectangle-airplane-thumbnail.png" alt="Youtube"></a>
+            </div>
+
+            <h2 class="footer-title">CONTÁCTAME!</h2>
+
+              <div class="footer-form-container">
+                    <div class="footer-image">
+                        <img src="https://pm1.aminoapps.com/6337/4d94f007b665555735f8b143038de5e1737593a3_hq.jpg" alt="Contacto">
+                        <p class="footer-image-caption">¡Estaré encantada de escucharte!</p>
+                    </div>
+
+            <form class="footer-form" id="contact-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Mensaje" required></textarea>
+                <button type="submit" class="footer-btn">MANDAR MENSAJE</button>
+            </form>
+
+            <p class="footer-copy">© 2025 María Alonso • Todos los derechos reservados</p>
+        </div>
+
+       
+    </footer>
+
+    <script>
+        // Menú móvil
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Carrusel
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        let currentSlide = 0;
+        let slideInterval;
+        
+        function showSlide(n) {
+            // Ocultar todas las diapositivas
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Remover clase active de todos los puntos
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Ajustar índice si es necesario
+            if (n >= slides.length) {
+                currentSlide = 0;
+            } else if (n < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = n;
+            }
+            
+            // Mostrar diapositiva actual y activar punto correspondiente
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+        
+        // Event listeners para controles
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // Event listeners para puntos
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                resetInterval();
+            });
+        });
+        
+        // Iniciar intervalo automático
+        function startInterval() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+        
+        // Reiniciar intervalo
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+        }
+        
+        // Pausar carrusel al pasar el ratón
+        const carousel = document.querySelector('.carousel-inner');
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            startInterval();
+        });
+        
+        // Inicializar carrusel
+        startInterval();
+        
+        // Formulario de contacto
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Te responderé pronto.');
+            contactForm.reset();
+        });
+        
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Cerrar menú móvil si está abierto
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
